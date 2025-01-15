@@ -5,33 +5,33 @@ using UnityEngine.InputSystem;
 public class ClientPlayerMove : NetworkBehaviour
 {
     [SerializeField]
-    CharacterController m_CharacterController;
+    private PlayerInput m_PlayerInput;
     [SerializeField]
-    PlayerInput m_PlayerInput;
-    
+    private Player m_Player;
     [SerializeField]
-    Transform m_CameraFollow;
+    private Transform m_CameraFollow;
 
     private void Awake()
     {
-        m_CharacterController.enabled = false;
         m_PlayerInput.enabled = false;
+        
     }
     
     public override void OnNetworkSpawn()
     {
         base.OnNetworkSpawn();
         enabled = IsClient;
+
+        m_Player.SetPlayerOne(IsHost == IsOwner);
+        
         
         if (!IsOwner)
         {
             enabled = false;
-            m_CharacterController.enabled = false;
             m_PlayerInput.enabled = false;
             return;
         }
         
-        m_CharacterController.enabled = true;
         m_PlayerInput.enabled = true;
         
         
