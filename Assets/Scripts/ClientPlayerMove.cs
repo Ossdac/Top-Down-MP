@@ -14,7 +14,6 @@ public class ClientPlayerMove : NetworkBehaviour
     private void Awake()
     {
         m_PlayerInput.enabled = false;
-        
     }
     
     public override void OnNetworkSpawn()

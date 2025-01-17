@@ -349,8 +349,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1151696057}
-  - component: {fileID: 1151696059}
   - component: {fileID: 1151696058}
+  - component: {fileID: 1151696059}
   m_Layer: 0
   m_Name: EnemySpawner
   m_TagString: Untagged
@@ -411,7 +411,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
-  enemyPrefab: {fileID: 0}
+  enemyPrefab: {fileID: 6008781079665634441, guid: 621f0809749c763449ffa050d1918ddf, type: 3}
   spawnRate: 1
 --- !u!1 &1493449412
 GameObject:
